@@ -10,7 +10,7 @@
     <title>Fixed top navbar example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset('css/navbar-top-fixed.css') }}" rel="stylesheet">
