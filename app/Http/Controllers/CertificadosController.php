@@ -10,7 +10,7 @@ class CertificadosController extends Controller
     {
         $pdf = new \setasign\Fpdi\Fpdi();
         
-        $pdf->setSourceFile(base_path('data/certificateTemplate.pdf'));
+        $pdf->setSourceFile(base_path('data/certificado-modelo-site.pdf'));
         $tplIdx = $pdf->importPage(1, '/MediaBox');
         
         $pdf->AddPage('L');        
@@ -19,13 +19,13 @@ class CertificadosController extends Controller
         //$pdf->AddFont('LiberationSans', '', base_path('data/fonts/liberation.php'));
         //$pdf->AddFont('LiberationSans-Bold', '', 'liberationb.php');
         
-        $pdf->SetXY(38,88);
+        $pdf->SetXY(23,93);
         
         //$pdf->SetFont('LiberationSans', '', 14);Arial
-        $pdf->SetFont('Arial', '', 14);
-        $str = 'Certificamos que ';
+        $pdf->SetFont('Helvetica', '', 18);
+        $str = 'O Jataí ACM SIGCSE Chapter confere, para os devidos fins, que';
         //$str .= mb_strtoupper($this->getName());
-        $str .= mb_strtoupper("João Canabrava da Silva");
+        /*$str .= mb_strtoupper("João Canabrava da Silva");
         
         //if ($this->getType() == 1) {
         if (true) {
@@ -44,10 +44,10 @@ class CertificadosController extends Controller
                     . 'em Agronomia da Universidade Federal de Goiás - '
                     . 'Regional Jataí, perfazendo carga horária de 50 horas.';
         }
-        
+        */
         $str = utf8_decode($str);
         $pdf->MultiCell(220, 7.5, $str, 0, 'J', 0);
-        
+        /*
         $pdf->SetXY(188,125);
         //setlocale(LC_TIME, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese');
         date_default_timezone_set('America/Sao_Paulo');
@@ -79,7 +79,7 @@ class CertificadosController extends Controller
         $pdf->SetXY(38,144);
         $str = 'A autenticidade do certificado pode ser verificada em: http://www.certificado.com.br';
         $str = utf8_decode($str);
-        $pdf->MultiCell(70, 4, $str, 0, 'J', 0);
+        $pdf->MultiCell(70, 4, $str, 0, 'J', 0);*/
         
         $pdf->Output();
         
