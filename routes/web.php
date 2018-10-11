@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('esqueleto');
-});
-
 Route::get('/', "PrincipalController@index");
 Route::get('/sobre', "PrincipalController@sobre");
 Route::get('/quem-somos', "PrincipalController@quemSomos");
