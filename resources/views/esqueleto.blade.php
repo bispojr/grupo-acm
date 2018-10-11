@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{!! asset('favicon.ico') !!}">
 
-    <title>Fixed top navbar example for Bootstrap</title>
+    <title>Jataí ACM SIGCSE Chapter</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,34 +19,52 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Fixed navbar</a>
+      <a class="navbar-brand" href="#">Jataí SIGCSE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Principal <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="#">Quem somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Agenda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Certificados
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Buscar</a>
+              <a class="dropdown-item" href="#">Validar</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fale Conosco</a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="text" placeholder="Busca" aria-label="busca">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busca</button>
         </form>
       </div>
     </nav>
 
     <main role="main" class="container">
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-        <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+        <h1>Jataí ACM SIGCSE Chapter</h1>
+        <p class="lead">A referência local da ACM em Educação de Computação em Jataí, Goiás.</p>
+        <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Conheça mais sobre o nosso capítulo &raquo;</a>
       </div>
     </main>
 
