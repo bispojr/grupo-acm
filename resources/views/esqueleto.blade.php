@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{!! asset('favicon.ico') !!}">
 
-    <title>Jataí ACM SIGCSE Chapter</title>
+    <title>Jataí ACM SIGCSE Chapter: {{ $titulo }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -60,20 +60,7 @@
       </div>
     </nav>
 
-    <main role="main" class="container">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="/img/logo-chapter-jatai.png" class="img-fluid" alt="Responsive image">
-                </div>
-                <div class="col-md-10">
-                    <h1>Jataí ACM SIGCSE Chapter</h1>
-                    <p class="lead">A referência local da ACM em Educação de Computação em Jataí, Goiás.</p>
-                    <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Conheça mais sobre o nosso capítulo &raquo;</a>
-                </div>
-            </div>
-        </div>
-    </main>
+    @include($view);
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
