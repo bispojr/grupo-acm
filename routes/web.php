@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('esqueleto');
 });
+
+Route::get('/', "PrincipalController@index");
+Route::get('/sobre', "PrincipalController@sobre");
+Route::get('/quem-somos', "PrincipalController@quemSomos");
+Route::get('/agenda', "PrincipalController@agenda");
+Route::get('/recursos', "PrincipalController@recursos");
+Route::get('/fale-conosco', "PrincipalController@faleConosco");
+
+Route::get('/certificados', "CertificadosController@index");
+Route::get('/certificados/buscar', "CertificadosController@buscar");
+Route::get('/certificados/validar', "CertificadosController@validar");
+
+
+
