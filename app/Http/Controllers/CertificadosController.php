@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Certificados as Certificados;
 
 class CertificadosController extends Controller
 {
@@ -84,5 +85,15 @@ class CertificadosController extends Controller
         $pdf->Output();
         
         exit();
+    }
+    public function buscar()
+    {
+        $dados = Certificados::valores("buscar");
+        return view('esqueleto', $dados);
+    }
+    public function validar()
+    {
+        $dados = Certificados::valores("validar");
+        return view('esqueleto', $dados);
     }
 }

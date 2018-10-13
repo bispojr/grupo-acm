@@ -13,19 +13,55 @@ class Principal extends Model
                 return self::valoresIndex();
             case "sobre":
                 return self::valoresSobre();
+            case "quem-somos":
+                return self::valoresQuemSomos();
+            case "agenda":
+                return self::valoresAgenda();
+            case "fale-conosco":
+                return self::valoresFaleConosco();
+            case "recursos":
+                return self::valoresRecursos();
         }
     }
     private static function valoresIndex()
     {
         $dados["titulo"] = 'Principal';
-        $dados["view"] = 'principal';
+        $dados["view"] = 'principal.index';
         
         return $dados;
     }
     private static function valoresSobre()
     {
         $dados["titulo"] = 'Sobre nós...';
-        $dados["view"] = 'sobre';
+        $dados["view"] = 'principal.sobre';
+        
+        return $dados;
+    }
+    private static function valoresQuemSomos()
+    {
+        $dados["titulo"] = 'Quem Somos?';
+        $dados["view"] = 'principal.quem-somos';
+        
+        return $dados;
+    }
+    private static function valoresAgenda()
+    {
+        $dados["titulo"] = 'Agenda';
+        $dados["view"] = 'principal.agenda';
+        
+        return $dados;
+    }
+    private static function valoresRecursos()
+    {
+        $dados["titulo"] = 'Recursos';
+        $dados["view"] = 'principal.recursos';
+        
+        return $dados;
+    }
+    private static function valoresFaleConosco()
+    {
+        $dados["titulo"] = 'Fale Conosco';
+        $dados["view"] = 'principal.fale-conosco';
         
         return $dados;
     }

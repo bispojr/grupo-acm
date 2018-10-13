@@ -17,4 +17,24 @@ class PrincipalController extends Controller
         $dados = Principal::valores("sobre");
         return view('esqueleto', $dados);
     }
+    public function quemSomos()
+    {
+        $dados = Principal::valores("quem-somos");
+        return view('esqueleto', $dados);
+    }
+    public function agenda()
+    {
+        $dados = Principal::valores("agenda");
+        return view('esqueleto', $dados);
+    }
+    public function recursos()
+    {
+        $dados = Principal::valores("recursos");
+        return view('esqueleto', $dados);
+    }
+    public function faleConosco()
+    {
+        $dados = Principal::valores("fale-conosco");
+        return view('esqueleto', $dados);
+    }
 }

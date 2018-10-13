@@ -26,31 +26,31 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Principal <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href='{{ url('/') }}'>Principal <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link" href='{{ url('/sobre') }}'>Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Quem somos?</a>
+            <a class="nav-link" href='{{ url('/quem-somos') }}'>Quem somos?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Agenda</a>
+            <a class="nav-link" href='{{ url('/agenda') }}'>Agenda</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Certificados
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Buscar</a>
-              <a class="dropdown-item" href="#">Validar</a>
+              <a class="dropdown-item" href='{{ url('/certificados/buscar') }}'>Buscar</a>
+              <a class="dropdown-item" href='{{ url('/certificados/validar') }}'>Validar</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Recursos</a>
+            <a class="nav-link" href='{{ url('/recursos') }}'>Recursos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Fale Conosco</a>
+            <a class="nav-link" href='{{ url('/fale-conosco') }}'>Fale Conosco</a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
