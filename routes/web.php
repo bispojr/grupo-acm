@@ -13,7 +13,7 @@
 
 Route::get('/', "PrincipalController@index");
 Route::get('/sobre', "PrincipalController@sobre");
-Route::get('/quem-somos', "PrincipalController@quemSomos");
+Route::get('/membros', "PrincipalController@membros");
 Route::get('/agenda', "PrincipalController@agenda");
 Route::get('/recursos', "PrincipalController@recursos");
 Route::get('/fale-conosco', "PrincipalController@faleConosco");

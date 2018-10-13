@@ -13,8 +13,8 @@ class Principal extends Model
                 return self::valoresIndex();
             case "sobre":
                 return self::valoresSobre();
-            case "quem-somos":
-                return self::valoresQuemSomos();
+            case "membros":
+                return self::valoresMembros();
             case "agenda":
                 return self::valoresAgenda();
             case "fale-conosco":
@@ -37,10 +37,10 @@ class Principal extends Model
         
         return $dados;
     }
-    private static function valoresQuemSomos()
+    private static function valoresMembros()
     {
-        $dados["titulo"] = 'Quem Somos?';
-        $dados["view"] = 'principal.quem-somos';
+        $dados["titulo"] = 'Membros';
+        $dados["view"] = 'principal.membros';
         
         return $dados;
     }
