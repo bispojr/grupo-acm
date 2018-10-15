@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Certificados extends Model
 {
+    protected $table = 'certificado';
+    
     public static function valores($pagina)
     {
         switch($pagina){
