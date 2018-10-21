@@ -7,9 +7,18 @@ php:
 
 addons:
   chrome: stable
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+      - mysql-client
+  
+services:
+  - mysql
   
 before_install:
-  - mysql -e 'CREATE DATABASE grupo_acm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;'
+  - mysql -e 'CREATE SCHEMA grupo_acm;'
 
 install:
   - cp .env.travis .env
