@@ -9,7 +9,7 @@ addons:
   chrome: stable
   
 before_install:
-  - mysql -e 'CREATE SCHEMA `grupo_acm`;'
+  - mysql -e 'CREATE DATABASE grupo_acm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;'
 
 install:
   - cp .env.travis .env
