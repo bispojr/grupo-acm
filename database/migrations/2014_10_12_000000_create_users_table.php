@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUsersTable extends Migration
 {
@@ -20,7 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('cpf')->unique();
             $table
                 ->string('password')
-                ->default('senha');
+                ->default(
+                    Hash::make('senha')
+                );
             $table->rememberToken();
             $table->timestamps();
         });
