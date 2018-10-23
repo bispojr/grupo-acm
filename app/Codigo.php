@@ -22,7 +22,7 @@ class Codigo extends Model
             $soma = self::somaTripla($triplaID, $triplaBase);
         
         if($soma != null)
-            return self::triplaToBase($soma);
+            return self::triplaToCod($soma);
         
         return null;
     }
@@ -80,7 +80,7 @@ class Codigo extends Model
     public static function triplaToID($tripla)
     {
         $id = $tripla[0]*36 + $tripla[1];
-        $id = $id*36 + $tripla[0];
+        $id = $id*36 + $tripla[2];
         
         if($id > 46656) return null;
         

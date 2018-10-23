@@ -106,6 +106,50 @@ class CodigoTest extends TestCase
     }
     
     //======================
+    //triplaToID
+    //======================
+    public function testTriplaToID01()
+    {
+        $tripla = [0,0,1];
+        $tripla = Codigo::triplaToID($tripla);
+        $esperado = 1;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testTriplaToID27()
+    {
+        $tripla = [0,0,27];
+        $tripla = Codigo::triplaToID($tripla);
+        $esperado = 27;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testTriplaToID42()
+    {
+        $tripla = [0,1,6];
+        $tripla = Codigo::triplaToID($tripla);
+        $esperado = 42;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testTriplaToID2000()
+    {
+        $tripla = [1,19,20];
+        $tripla = Codigo::triplaToID($tripla);
+        $esperado = 2000;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testTriplaToIDErro()
+    {
+        $tripla = [40,19,20];
+        $tripla = Codigo::triplaToID($tripla);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    
+    //======================
     //triplaToCod
     //======================
     public function testTriplaToCod01()
