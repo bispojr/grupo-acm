@@ -256,9 +256,77 @@ class CodigoTest extends TestCase
         
         $this->assertEquals($esperado, $soma);
     }
+    
+    //======================
+    //somaTripla
+    //======================
+    public function testSomaTripla01()
+    {
+        $a = [0,0,1];
+        $b = [0,0,1];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = [0,0,2];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testSomaTripla02()
+    {
+        $a = [0,0,12];
+        $b = [0,0,15];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = [0,0,27];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testSomaTripla03()
+    {
+        $a = [0,0,32];
+        $b = [0,0,15];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = [0,1,11];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testSomaTripla04()
+    {
+        $a = [0,14,32];
+        $b = [0,20,15];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = [0,35,11];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testSomaTripla05()
+    {
+        $a = [0,24,32];
+        $b = [0,20,15];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = [1,9,11];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testSomaTripla06()
+    {
+        $a = [10,24,32];
+        $b = [5,25,15];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = [16,14,11];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testSomaTriplaErro()
+    {
+        $a = [20,24,32];
+        $b = [25,25,15];
+        $tripla = Codigo::somaTripla($a, $b);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
     /*public function testPrimeiroCodigoUsuario()
     {
-        $codigo = Codigo::getUsuario(1);
+        $codigo 
+        = Codigo::getUsuario(1);
         
         $this->assertEquals("ABC", $codigo);
     }

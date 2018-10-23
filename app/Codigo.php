@@ -96,30 +96,23 @@ class Codigo extends Model
         
         return [$soma, 0];
     }
-    private static function somaTripla($tripla1, $tripla2)
+    public static function somaTripla($tripla1, $tripla2)
     {
-        $val3 = $tripla1[2] + $tripla2[2];
+        $resultado = self::somaNum($tripla1[2], $tripla2[2], 0);
+        if($resultado == null) return null;
+        $soma3 = $resultado[0];
         
-        $estouro = 0;
-        if($val3 >= 36){
-            $estouro = 1;
-            $val3 -= 36;
-        }
+        $resultado = self::somaNum($tripla1[1], $tripla2[1], $resultado[1]);
+        if($resultado == null) return null;
+        $soma2 = $resultado[0];
         
-        $val2 = $tripla1[1] + $tripla2[1] + $estouro;
+        $resultado = self::somaNum($tripla1[0], $tripla2[0], $resultado[1]);
+        if($resultado == null) return null;
+        if($resultado[1] == 1) return null;
         
-        $estouro = 0;
-        if($val2 >= 36){
-            $estouro = 1;
-            $val2 -= 36;
-        }
+        $soma1 = $resultado[0];
         
-        $val1 = $tripla1[0] + $tripla2[0] + $estouro;
-        
-        if($val1 >= 36)
-            return null;
-        else
-            return [$val1, $val2, $val3];
+        return [$soma1, $soma2, $soma3];
         
     }
 }
