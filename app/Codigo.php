@@ -45,35 +45,44 @@ class Codigo extends Model
             return chr(($val - 26) + 48);
         return null;
     }
-    private static function idToTripla($num)
+    public static function idToTripla($num)
     {
-        $val3 = $num % 36;
-        $val2 = intdiv($val3, 36) % 36;
-        $val1 = intdiv($val2, 36);
+        $base = $num;
+        $val3 = $base % 36;
+        
+        $base = intdiv($base, 36);
+        $val2 =  $base %  36;
+        
+        $val1 = intdiv($base, 36);
         
         if($val1 > 36)
             return null;
         else
             return [$val1, $val2, $val3];
     }
-    private static function triplaToCod($tripla)
+    public static function triplaToCod($tripla)
     {
         $valor1 = self::numToCod($tripla[0]);
+        if($valor1 == null) return null;
+        
         $valor2 = self::numToCod($tripla[1]);
+        if($valor2 == null) return null;
+        
         $valor3 = self::numToCod($tripla[2]);
+        if($valor3 == null) return null;
         
         return $valor1.$valor2.$valor3;
     }
-    
-    private static function codToTripla($codigo)
-    {
-        $valor1 = ord($codigo[0]);
-        $valor2 = ord($codigo[1]);
-        $valor3 = ord($codigo[2]);
+    public static function codToTripla($codigo)
+    {   
+        $valor1 = self::codToNum($codigo[0]);
+        if($valor1 === null) return null;
         
-        $valor1 = self::codToNum($valor1);
-        $valor2 = self::codToNum($valor2);
-        $valor3 = self::codToNum($valor3);
+        $valor2 = self::codToNum($codigo[1]);
+        if($valor2 === null) return null;
+        
+        $valor3 = self::codToNum($codigo[2]);
+        if($valor3 === null) return null;
         
         return [$valor1, $valor2, $valor3];
     }

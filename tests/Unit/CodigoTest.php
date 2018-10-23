@@ -66,10 +66,132 @@ class CodigoTest extends TestCase
         $this->assertEquals(null, $cod);
     }
     
+    //======================
+    //idToTripla
+    //======================
+    public function testIdToTripla01()
+    {
+        $tripla = Codigo::idToTripla(1);
+        $esperado = [0,0,1];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testIdToTripla27()
+    {
+        $tripla = Codigo::idToTripla(27);
+        $esperado = [0,0,27];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testIdToTripla42()
+    {
+        $tripla = Codigo::idToTripla(42);
+        $esperado = [0,1,6];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testIdToTripla2000()
+    {
+        $tripla = Codigo::idToTripla(2000);
+        $esperado = [1,19,20];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testIdToTripla60000()
+    {
+        $tripla = Codigo::idToTripla(60000);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
     
+    //======================
+    //triplaToCod
+    //======================
+    public function testTriplaToCod01()
+    {
+        $tripla = [0,0,1];
+        $cod = Codigo::triplaToCod($tripla);
+        $esperado = "AAB";
+        
+        $this->assertEquals($esperado, $cod);
+    }
+    public function testTriplaToCod02()
+    {
+        $tripla = [0,0,27];
+        $cod = Codigo::triplaToCod($tripla);
+        $esperado = "AA1";
+        
+        $this->assertEquals($esperado, $cod);
+    }
+    public function testTriplaToCod03()
+    {
+        $tripla = [0,1,6];
+        $cod = Codigo::triplaToCod($tripla);
+        $esperado = "ABG";
+        
+        $this->assertEquals($esperado, $cod);
+    }
+    public function testTriplaToCod04()
+    {
+        $tripla = [1,19,20];
+        $cod = Codigo::triplaToCod($tripla);
+        $esperado = "BTU";
+        
+        $this->assertEquals($esperado, $cod);
+    }
+    public function testTriplaToCodErro()
+    {
+        $tripla = [1,42,20];
+        $cod = Codigo::triplaToCod($tripla);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $cod);
+    }
     
-    
-    
+    //======================
+    //codToTripla
+    //======================
+    public function testCodToTripla01()
+    {
+        $cod = "AAB";
+        $tripla = Codigo::codToTripla($cod);
+        $esperado = [0,0,1];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testCodToTripla02()
+    {
+        $cod = "AA1";
+        $tripla = Codigo::codToTripla($cod);
+        $esperado = [0,0,27];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testCodToTripla03()
+    {
+        $cod = "ABG";
+        $tripla = Codigo::codToTripla($cod);
+        $esperado = [0,1,6];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testCodToTripla04()
+    {
+        $cod = "BTU";
+        $tripla = Codigo::codToTripla($cod);
+        $esperado = [1,19,20];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testCodToTriplaErro()
+    {
+        $cod = "BaU";
+        $tripla = Codigo::codToTripla($cod);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
     
     /*public function testPrimeiroCodigoUsuario()
     {
