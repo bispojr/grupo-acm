@@ -86,8 +86,6 @@ class Codigo extends Model
         
         return [$valor1, $valor2, $valor3];
     }
-    
-    //Testar
     public static function somaNum($a, $b, $vaiUm)
     {
         $soma = $a + $b + $vaiUm;

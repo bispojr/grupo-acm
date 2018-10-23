@@ -193,6 +193,69 @@ class CodigoTest extends TestCase
         $this->assertEquals($esperado, $tripla);
     }
     
+    //======================
+    //somaNum
+    //======================
+    public function testSomaNum01()
+    {
+        $a = 14;
+        $b = 12;
+        $vaiUm = 0;
+        $soma = Codigo::somaNum($a, $b, $vaiUm);
+        $esperado = [26,0];
+        
+        $this->assertEquals($esperado, $soma);
+    }
+    public function testSomaNum02()
+    {
+        $a = 14;
+        $b = 12;
+        $vaiUm = 1;
+        $soma = Codigo::somaNum($a, $b, $vaiUm);
+        $esperado = [27,0];
+        
+        $this->assertEquals($esperado, $soma);
+    }
+    public function testSomaNum03()
+    {
+        $a = 14;
+        $b = 22;
+        $vaiUm = 0;
+        $soma = Codigo::somaNum($a, $b, $vaiUm);
+        $esperado = [0,1];
+        
+        $this->assertEquals($esperado, $soma);
+    }
+    public function testSomaNum04()
+    {
+        $a = 14;
+        $b = 22;
+        $vaiUm = 1;
+        $soma = Codigo::somaNum($a, $b, $vaiUm);
+        $esperado = [1,1];
+        
+        $this->assertEquals($esperado, $soma);
+    }
+    public function testSomaNum05()
+    {
+        $a = 24;
+        $b = 22;
+        $vaiUm = 0;
+        $soma = Codigo::somaNum($a, $b, $vaiUm);
+        $esperado = [10,1];
+        
+        $this->assertEquals($esperado, $soma);
+    }
+    public function testSomaNumErro()
+    {
+        $a = 40;
+        $b = 40;
+        $vaiUm = 0;
+        $soma = Codigo::somaNum($a, $b, $vaiUm);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $soma);
+    }
     /*public function testPrimeiroCodigoUsuario()
     {
         $codigo = Codigo::getUsuario(1);
