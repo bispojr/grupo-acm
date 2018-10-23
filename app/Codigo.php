@@ -9,20 +9,37 @@ class Codigo extends Model
     private static $usuarioZero = "ABB";
     private static $eventoZero = "XYY";
     
-    public static function getUsuario($id)
+    public static function getUsuarioByID($id)
     {
         $triplaID = self::idToTripla($id);
         
-        $triplaCod = null;
+        $triplaBase = null;
         if($triplaID != null)
-            $triplaCod = self::codToTripla(self::$usuarioZero);
+            $triplaBase = self::codToTripla(self::$usuarioZero);
         
         $soma = null;
-        if($triplaCod != null)
-            $soma = self::somaTripla($triplaID, $triplaCod);
+        if($triplaBase != null)
+            $soma = self::somaTripla($triplaID, $triplaBase);
         
         if($soma != null)
-            return self::triplaToCod($soma);
+            return self::triplaToBase($soma);
+        
+        return null;
+    }
+    public static function getUsuarioByCod($cod)
+    {
+        $triplaCod = self::codToTripla($cod);
+        
+        $triplaBase = null;
+        if($triplaCod != null)
+            $triplaBase = self::codToTripla(self::$usuarioZero);
+        
+        $diff = null;
+        if($triplaBase != null)
+            $diff = self::diffTripla($triplaCod, $triplaBase);
+        
+        if($diff != null)
+            return self::triplaToID($soma);
         
         return null;
     }
@@ -59,6 +76,15 @@ class Codigo extends Model
             return null;
         else
             return [$val1, $val2, $val3];
+    }
+    public static function triplaToID($tripla)
+    {
+        $id = $tripla[0]*36 + $tripla[1];
+        $id = $id*36 + $tripla[0];
+        
+        if($id > 46656) return null;
+        
+        return $id;
     }
     public static function triplaToCod($tripla)
     {

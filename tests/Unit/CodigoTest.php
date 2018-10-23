@@ -325,41 +325,41 @@ class CodigoTest extends TestCase
     }
     
     //======================
-    //getUsuario
+    //getUsuarioByID
     //======================
-    public function testGetUsuario1()
+    public function testGetUsuarioByID1()
     {
-        $codigo = Codigo::getUsuario(1);
+        $codigo = Codigo::getUsuarioByID(1);
         
         $this->assertEquals("ABC", $codigo);
     }
-    public function testGetUsuario10()
+    public function testGetUsuarioByID10()
     {
-        $codigo = Codigo::getUsuario(10);
+        $codigo = Codigo::getUsuarioByID(10);
         
         $this->assertEquals("ABL", $codigo);
     }
-    public function testGetUsuario100()
+    public function testGetUsuarioByID100()
     {
-        $codigo = Codigo::getUsuario(100);
+        $codigo = Codigo::getUsuarioByID(100);
         
         $this->assertEquals("AD3", $codigo);
     }
-    public function testGetUsuario500()
+    public function testGetUsuarioByID500()
     {
-        $codigo = Codigo::getUsuario(500);
+        $codigo = Codigo::getUsuarioByID(500);
         
         $this->assertEquals("AO7", $codigo);
     }
-    public function testGetUsuario1000()
+    public function testGetUsuarioByID1000()
     {
-        $codigo = Codigo::getUsuario(1000);
+        $codigo = Codigo::getUsuarioByID(1000);
         
         $this->assertEquals("A23", $codigo);
     }
-    public function testGetUsuario10000()
+    public function testGetUsuarioByID10000()
     {
-        $codigo = Codigo::getUsuario(10000);
+        $codigo = Codigo::getUsuarioByID(10000);
         
         $this->assertEquals("H03", $codigo);
     }
