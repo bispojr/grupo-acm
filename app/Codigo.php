@@ -86,6 +86,18 @@ class Codigo extends Model
         
         return [$valor1, $valor2, $valor3];
     }
+    
+    //Testar
+    public static function somaNum($a, $b, $vaiUm)
+    {
+        $soma = $a + $b + $vaiUm;
+        
+        if($soma > 35) 
+            if($soma-36 > 35) return null;
+            else return [$soma - 36, 1];
+        
+        return [$soma, 0];
+    }
     private static function somaTripla($tripla1, $tripla2)
     {
         $val3 = $tripla1[2] + $tripla2[2];
