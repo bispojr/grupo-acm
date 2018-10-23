@@ -323,41 +323,44 @@ class CodigoTest extends TestCase
         
         $this->assertEquals($esperado, $tripla);
     }
-    /*public function testPrimeiroCodigoUsuario()
+    
+    //======================
+    //getUsuario
+    //======================
+    public function testGetUsuario1()
     {
-        $codigo 
-        = Codigo::getUsuario(1);
+        $codigo = Codigo::getUsuario(1);
         
         $this->assertEquals("ABC", $codigo);
     }
-    public function testDecimoCodigoUsuario()
+    public function testGetUsuario10()
     {
         $codigo = Codigo::getUsuario(10);
         
         $this->assertEquals("ABL", $codigo);
     }
-    public function testCentesimoCodigoUsuario()
+    public function testGetUsuario100()
     {
         $codigo = Codigo::getUsuario(100);
         
         $this->assertEquals("AD3", $codigo);
     }
-    public function testQuingentesimoCodigoUsuario()
+    public function testGetUsuario500()
     {
         $codigo = Codigo::getUsuario(500);
         
-        $this->assertEquals("AO8", $codigo);
+        $this->assertEquals("AO7", $codigo);
     }
-    public function testMilesimoCodigoUsuario()
+    public function testGetUsuario1000()
     {
         $codigo = Codigo::getUsuario(1000);
         
         $this->assertEquals("A23", $codigo);
     }
-    public function test10milCodigoUsuario()
+    public function testGetUsuario10000()
     {
         $codigo = Codigo::getUsuario(10000);
         
-        $this->assertEquals("AO8", $codigo);
-    }*/
+        $this->assertEquals("H03", $codigo);
+    }
 }
