@@ -39,7 +39,7 @@ class Codigo extends Model
             $diff = self::diffTripla($triplaCod, $triplaBase);
         
         if($diff != null)
-            return self::triplaToID($soma);
+            return self::triplaToID($diff);
         
         return null;
     }

@@ -354,6 +354,7 @@ class CodigoTest extends TestCase
         
         $this->assertEquals($esperado, $diff);
     }
+    
     //======================
     //somaTripla
     //======================
@@ -526,5 +527,45 @@ class CodigoTest extends TestCase
         $codigo = Codigo::getUsuarioByID(10000);
         
         $this->assertEquals("H03", $codigo);
+    }
+    
+    //======================
+    //getUsuarioByCod
+    //======================
+    public function testGetUsuarioByCodABC()
+    {
+        $id = Codigo::getUsuarioByCod("ABC");
+        
+        $this->assertEquals(1, $id);
+    }
+    public function testGetUsuarioByCodABL()
+    {
+        $id = Codigo::getUsuarioByCod("ABL");
+        
+        $this->assertEquals(10, $id);
+    }
+    public function testGetUsuarioByCodAD3()
+    {
+        $id = Codigo::getUsuarioByCod("AD3");
+        
+        $this->assertEquals(100, $id);
+    }
+    public function testGetUsuarioByCodAO7()
+    {
+        $id = Codigo::getUsuarioByCod("AO7");
+        
+        $this->assertEquals(500, $id);
+    }
+    public function testGetUsuarioByCodA23()
+    {
+        $id = Codigo::getUsuarioByCod("A23");
+        
+        $this->assertEquals(1000, $id);
+    }
+    public function testGetUsuarioByCodH03()
+    {
+        $id = Codigo::getUsuarioByCod("H03");
+        
+        $this->assertEquals(10000, $id);
     }
 }
