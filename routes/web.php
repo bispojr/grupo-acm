@@ -11,6 +11,7 @@
 |
 */
 
+//PRINCIPAL
 Route::get('/', "PrincipalController@index");
 Route::get('/sobre', "PrincipalController@sobre");
 Route::get('/membros', "PrincipalController@membros");
@@ -18,9 +19,15 @@ Route::get('/agenda', "PrincipalController@agenda");
 Route::get('/recursos', "PrincipalController@recursos");
 Route::get('/fale-conosco', "PrincipalController@faleConosco");
 
+
+//CERTIFICADOS
 Route::get('/certificados', "CertificadosController@index");
+
 Route::get('/certificados/buscar', "CertificadosController@buscar");
+Route::post('/certificados/buscar', "CertificadosController@buscar");
+
 Route::get('/certificados/validar', "CertificadosController@validar");
+Route::post('/certificados/validar', "CertificadosController@validar");
 
 
 

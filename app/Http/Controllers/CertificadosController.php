@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Certificados as Certificados;
 
+use Illuminate\Http\Request;
+
 class CertificadosController extends Controller
 {
     public function index()
@@ -62,9 +64,17 @@ class CertificadosController extends Controller
         $dados = Certificados::valores("buscar");
         return view('esqueleto', $dados);
     }
+    public function buscar(Request $request)
+    {
+        $cpf = $request->input('cpf');
+    }
     public function validar()
     {
         $dados = Certificados::valores("validar");
         return view('esqueleto', $dados);
+    }
+    public function validar(Request $request)
+    {
+        $codigo = $request->input('codigo');
     }
 }
