@@ -302,6 +302,59 @@ class CodigoTest extends TestCase
     }
     
     //======================
+    //diffNum
+    //======================
+    public function testDiffNum01()
+    {
+        $a = 26;
+        $b = 14;
+        $menosUm = 0;
+        $diff = Codigo::diffNum($a, $b, $menosUm);
+        $esperado = [12,0];
+        
+        $this->assertEquals($esperado, $diff);
+    }
+    public function testDiffNum02()
+    {
+        $a = 27;
+        $b = 14;
+        $menosUm = -1;
+        $diff = Codigo::diffNum($a, $b, $menosUm);
+        $esperado = [12,0];
+        
+        $this->assertEquals($esperado, $diff);
+    }
+    public function testDiffNum03()
+    {
+        $a = 0;
+        $b = 22;
+        $menosUm = 0;
+        $diff = Codigo::diffNum($a, $b, $menosUm);
+        $esperado = [14,-1];
+        
+        $this->assertEquals($esperado, $diff);
+    }
+    public function testDiffNum04()
+    {
+        $a = 1;
+        $b = 22;
+        $menosUm = -1;
+        $diff = Codigo::diffNum($a, $b, $menosUm);
+        $esperado = [14,-1];
+        
+        $this->assertEquals($esperado, $diff);
+    }
+    public function testDiffNum05()
+    {
+        $a = 10;
+        $b = 22;
+        $menosUm = 0;
+        $diff = Codigo::diffNum($a, $b, $menosUm);
+        $esperado = [24,-1];
+        
+        $this->assertEquals($esperado, $diff);
+    }
+    //======================
     //somaTripla
     //======================
     public function testSomaTripla01()
@@ -363,6 +416,73 @@ class CodigoTest extends TestCase
         $a = [20,24,32];
         $b = [25,25,15];
         $tripla = Codigo::somaTripla($a, $b);
+        $esperado = null;
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    
+    //======================
+    //diffTripla
+    //======================
+    public function testDiffTripla01()
+    {
+        $a = [0,0,2];
+        $b = [0,0,1];
+        $tripla = Codigo::diffTripla($a, $b);
+        $esperado = [0,0,1];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testDiffTripla02()
+    {
+        $a = [0,0,27];
+        $b = [0,0,15];
+        $tripla = Codigo::diffTripla($a, $b);
+        $esperado = [0,0,12];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testDiffTripla03()
+    {
+        $a = [0,1,11];
+        $b = [0,0,32];
+        $tripla = Codigo::diffTripla($a, $b);
+        $esperado = [0,0,15];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testDiffTripla04()
+    {
+        $a = [0,35,11];
+        $b = [0,14,32];
+        $tripla = Codigo::diffTripla($a, $b);
+        $esperado = [0,20,15];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testDiffTripla05()
+    {
+        $a = [1,9,11];
+        $b = [0,24,32];
+        $tripla = Codigo::diffTripla($a, $b);
+        $esperado = [0,20,15];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testDiffTripla06()
+    {
+        $a = [16,14,11];
+        $b = [10,24,32];
+        $tripla = Codigo::diffTripla($a, $b);
+        $esperado = [5,25,15];
+        
+        $this->assertEquals($esperado, $tripla);
+    }
+    public function testDiffTriplaErro()
+    {
+        $a = [0,14,11];
+        $b = [0,24,32];
+        $tripla = Codigo::diffTripla($a, $b);
         $esperado = null;
         
         $this->assertEquals($esperado, $tripla);

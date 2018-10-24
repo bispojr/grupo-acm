@@ -141,4 +141,29 @@ class Codigo extends Model
         return [$soma1, $soma2, $soma3];
         
     }
+    public static function diffNum($a, $b, $menosUm)
+    {
+        $diff = $a - $b + $menosUm;
+        
+        if($diff < 0) 
+            return [$diff + 36, -1];
+        
+        return [$diff, 0];
+    }
+    public static function diffTripla($tripla1, $tripla2)
+    {
+        $resultado = self::diffNum($tripla1[2], $tripla2[2], 0);
+        $diff3 = $resultado[0];
+        
+        $resultado = self::diffNum($tripla1[1], $tripla2[1], $resultado[1]);
+        $diff2 = $resultado[0];
+        
+        $resultado = self::diffNum($tripla1[0], $tripla2[0], $resultado[1]);
+        if($resultado[1] == -1) return null;
+        
+        $diff1 = $resultado[0];
+        
+        return [$diff1, $diff2, $diff3];
+        
+    }
 }
