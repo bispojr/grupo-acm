@@ -188,11 +188,10 @@ class CodigoTest extends TestCase
     }
     public function testTriplaToCodErro()
     {
+        $this->expectException(Exception::class);
+
         $tripla = [1,42,20];
         $cod = Codigo::triplaToCod($tripla);
-        $esperado = null;
-        
-        $this->assertEquals($esperado, $cod);
     }
     
     //======================
