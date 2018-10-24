@@ -62,7 +62,7 @@ class CertificadosController extends Controller
         $dados = Certificados::valores("buscar");
         return view('esqueleto', $dados);
     }
-    public function buscar(Request $request)
+    public function buscarComCPF(Request $request)
     {
         $cpf = $request->input('cpf');
     }
@@ -71,7 +71,7 @@ class CertificadosController extends Controller
         $dados = Certificados::valores("validar");
         return view('esqueleto', $dados);
     }
-    public function validar(Request $request)
+    public function validarComCodigo(Request $request)
     {
         $codigo = $request->input('codigo');
     }

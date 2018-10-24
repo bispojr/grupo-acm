@@ -24,10 +24,10 @@ Route::get('/fale-conosco', "PrincipalController@faleConosco");
 Route::get('/certificados', "CertificadosController@index");
 
 Route::get('/certificados/buscar', "CertificadosController@buscar");
-Route::post('/certificados/buscar', "CertificadosController@buscar");
+Route::post('/certificados/buscar', "CertificadosController@buscarComCPF");
 
 Route::get('/certificados/validar', "CertificadosController@validar");
-Route::post('/certificados/validar', "CertificadosController@validar");
+Route::post('/certificados/validar', "CertificadosController@validarComCodigo");
 
 
 
