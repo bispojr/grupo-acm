@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Certificados as Certificados;
 
-use Illuminate\Http\Request;
-
 class CertificadosController extends Controller
 {
     public function index()
