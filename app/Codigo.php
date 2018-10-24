@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Codigo extends Model
 {
     private static $usuarioZero = "ABB";
-    private static $eventoZero = "XYY";
+    private static $eventoZero = "NOO";
     
     public static function getUsuarioByID($id)
     {
@@ -26,6 +26,23 @@ class Codigo extends Model
         
         return null;
     }
+    public static function getEventoByID($id)
+    {
+        $triplaID = self::idToTripla($id);
+        
+        $triplaBase = null;
+        if($triplaID != null)
+            $triplaBase = self::codToTripla(self::$eventoZero);
+        
+        $soma = null;
+        if($triplaBase != null)
+            $soma = self::somaTripla($triplaID, $triplaBase);
+        
+        if($soma != null)
+            return self::triplaToCod($soma);
+        
+        return null;
+    }
     public static function getUsuarioByCod($cod)
     {
         $triplaCod = self::codToTripla($cod);
@@ -33,6 +50,23 @@ class Codigo extends Model
         $triplaBase = null;
         if($triplaCod != null)
             $triplaBase = self::codToTripla(self::$usuarioZero);
+        
+        $diff = null;
+        if($triplaBase != null)
+            $diff = self::diffTripla($triplaCod, $triplaBase);
+        
+        if($diff != null)
+            return self::triplaToID($diff);
+        
+        return null;
+    }
+    public static function getEventoByCod($cod)
+    {
+        $triplaCod = self::codToTripla($cod);
+        
+        $triplaBase = null;
+        if($triplaCod != null)
+            $triplaBase = self::codToTripla(self::$eventoZero);
         
         $diff = null;
         if($triplaBase != null)

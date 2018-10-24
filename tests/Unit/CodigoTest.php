@@ -528,6 +528,46 @@ class CodigoTest extends TestCase
         
         $this->assertEquals("H03", $codigo);
     }
+
+    //======================
+    //getEventoByID
+    //======================
+    public function testGetEventoByID1()
+    {
+        $codigo = Codigo::getEventoByID(1);
+        
+        $this->assertEquals("NOP", $codigo);
+    }
+    public function testGetEventoByID10()
+    {
+        $codigo = Codigo::getEventoByID(10);
+        
+        $this->assertEquals("NOY", $codigo);
+    }
+    public function testGetEventoByID100()
+    {
+        $codigo = Codigo::getEventoByID(100);
+        
+        $this->assertEquals("NRG", $codigo);
+    }
+    public function testGetEventoByID500()
+    {
+        $codigo = Codigo::getEventoByID(500);
+        
+        $this->assertEquals("N2K", $codigo);
+    }
+    public function testGetEventoByID1000()
+    {
+        $codigo = Codigo::getEventoByID(1000);
+        
+        $this->assertEquals("OGG", $codigo);
+    }
+    public function testGetEventoByID10000()
+    {
+        $codigo = Codigo::getEventoByID(10000);
+        
+        $this->assertEquals("VEG", $codigo);
+    }
     
     //======================
     //getUsuarioByCod
