@@ -6,6 +6,8 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use Exception;
+
 use App\Codigo as Codigo;
 
 class CodigoTest extends TestCase
@@ -33,9 +35,9 @@ class CodigoTest extends TestCase
     }
     public function testNumToCod57()
     {
+        $this->expectException(Exception::class);
+
         $cod = Codigo::numToCod(57);
-        
-        $this->assertEquals(null, $cod);
     }
     
     //======================

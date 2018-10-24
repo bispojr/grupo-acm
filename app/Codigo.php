@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Exception;
 
 class Codigo extends Model
 {
@@ -94,7 +95,7 @@ class Codigo extends Model
             return chr($val + 65);
         if($val >= 26 && $val <= 35 )   //0-9
             return chr(($val - 26) + 48);
-        return null;
+        throw new Exception('Parâmetro excede o valor-base (36).');
     }
     public static function idToTripla($num)
     {
