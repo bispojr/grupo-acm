@@ -26,7 +26,7 @@ class UserTest extends TestCase
         $user->nome = "Esdras";
         $user->email = "esdraspiano@gmail.com";
         $user->cpf = "000000000-00";
-        $user->cpf = Hash::make("senha");
+        $user->password = Hash::make("senha");
         $user->save();
         
         $this->assertDatabaseHas('users', [

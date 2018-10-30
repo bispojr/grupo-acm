@@ -28,8 +28,8 @@ class CertificadosTest extends TestCase
         $this->user = new User;
         $this->user->nome = "Esdras";
         $this->user->email = "esdraspiano@gmail.com";
-        $this->user->cpf = "000000000-00";
-        $this->user->cpf = Hash::make("senha");
+        $this->user->cpf = "000.000.000-00";
+        $this->user->password = Hash::make("senha");
         $this->user->save();
         
         $this->evento = new Evento;
@@ -52,5 +52,25 @@ class CertificadosTest extends TestCase
             'user_id' => $this->user->id,
             'evento_id' => $this->evento->id
         ]);
+    }
+    /**
+     * @depends testInsercaoSimples
+     */
+    public function testBuscarComCPF()
+    {
+        $certificado = new Certificados;
+        $certificado->user_id = $this->user->id;
+        $certificado->evento_id = $this->evento->id;
+        $certificado->tipo_participacao = "participante";
+        $certificado->save();
+
+        $dados = Certificados::valores("buscarComCPF", '000.000.000-00');
+        $certificado = $dados["certificados"];
+        $certificado = $certificado->first();
+
+        //echo "Certificado: ".$certificado;
+
+        $this->assertEquals($this->user->id, $certificado->user_id);
+        $this->assertEquals($this->evento->id, $certificado->evento_id);
     }
 }
