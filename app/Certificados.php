@@ -35,8 +35,9 @@ class Certificados extends Model
     }
     private static function valoresBuscarComCPF($cpf)
     {
-        $usuario = User::where("cpf", $cpf)->first();
-        $dados["certificados"] = Certificados::where("user_id", $usuario->id);
+        $usuario = User::where("cpf", $cpf)->firstOrFail();
+
+        $dados["certificados"] = Certificados::where("user_id", $usuario->id)->get();
 
         return $dados;
     }
