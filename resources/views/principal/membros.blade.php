@@ -53,12 +53,57 @@
           <div class="card-body text-dark">
             <div class="row">
               <div class="col-md-3">
-                  <img class="card-img-top" src="/img/quem-somos/desconhecido.jpg" alt="Participante desconhecido">  
+                  <img class="card-img-top" src="/img/quem-somos/rafael.jpg" alt="Rafael Ap. de S. Andrade">  
                 </div>              
                 <div class="col-md-9">
-                    <h5 class="card-title">Participante X</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Participante</h6> 
-                    <p class="card-text"> Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Pra lá , depois divoltis porris, paradis. </p>
+                    <h5 class="card-title">Rafael Ap. de S. Andrade</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Secretário</h6> 
+                    <p class="card-text"> Graduando de Ciências da Computação (UFG). Possui técnico em manutenção e suporte em Informática pelo IFSP (Instituto Federal de Educação, Ciência e Tecnologia campus Votuporanga) (2014). É membro do Grupo Especial de Interesse em Educação de Computação (SIGCSE) da ACM (Association for Computing Machinery). É participante do Núcleo de Estudos em Educação de Computação (NEC). </p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-dark mb-3" style="margin-top:2em;">
+          <div class="card-body text-dark">
+            <div class="row">
+              <div class="col-md-3">
+                  <img class="card-img-top" src="/img/quem-somos/morgana.jpg" alt="Participante desconhecido">  
+                </div>              
+                <div class="col-md-9">
+                    <h5 class="card-title">Morgana Schenkel</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Chapter Member</h6> 
+                    <p class="card-text"> Tecnóloga em Gestão de Recursos Humanos pelo Centro Universitário Estácio Uniseb (2014). Possui Bacharelado em Administração pela Unopar (2015), Esta Cursando Bacharelado em Ciências da Computação pela UFG - Jataí (2015).Tem experiência na área de Ciência da Computação, com ênfase em Informática na Educação. </p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-dark mb-3" style="margin-top:2em;">
+          <div class="card-body text-dark">
+            <div class="row">
+              <div class="col-md-3">
+                  <img class="card-img-top" src="/img/quem-somos/aladir.jpg" alt="Participante desconhecido">  
+                </div>              
+                <div class="col-md-9">
+                    <h5 class="card-title">Aladir Silva Junior</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Vice Chair</h6> 
+                    <p class="card-text"> Doutor em Engenharia Eletrônica e Computação pelo ITA (Instituto Tecnológico de Aeronáutica) e professor efetivo do Instituto Federal de Goiás (IFG) - Câmpus Jataí, onde coordena o Núcleo de Informática na Educação (NINE). Atua e vibra com as possibilidades de uso das Tecnologias Digitais de Informação e Comunicação (TDIC) na Educação, em todos os seus níveis. Membro efetivo da Association for Computing Machinery (ACM) e da Sociedade Brasileira de Computação (SBC). </p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-dark mb-3" style="margin-top:2em;">
+          <div class="card-body text-dark">
+            <div class="row">
+              <div class="col-md-3">
+                  <img class="card-img-top" src="/img/quem-somos/leizer.jpg" alt="Participante desconhecido">  
+                </div>              
+                <div class="col-md-9">
+                    <h5 class="card-title">Leizer Fernandes</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Chapter Member</h6> 
+                    <p class="card-text"> Doutorando e Mestre em Educação, com ênfase em Tecnologias Educacionais. Especialista em Segurança da Informação. Graduado em Sistemas de Informação. Professor EBTT no IFG/Jataí. Avaliador Ad-hoc de Cursos de Graduação pelo INEP. Pesquisador no Núcleo de Informática na Educação, com interesse em avaliação e desenvolvimento de Tecnologias Educacionais e Redes Sociais para aprendizagem. </p>
                 </div>
             </div>
           </div>
@@ -93,6 +138,8 @@
             </div>
           </div>
         </div>
+
+        
         
     </div>
     <div class="col-md-1"></div>

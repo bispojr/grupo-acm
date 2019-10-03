@@ -14,7 +14,6 @@
 //PRINCIPAL
 Route::get('/', "PrincipalController@index");
 Route::get('/sobre', "PrincipalController@sobre");
-Route::get('/membros', "PrincipalController@membros");
 Route::get('/agenda', "PrincipalController@agenda");
 Route::get('/recursos', "PrincipalController@recursos");
 Route::get('/fale-conosco', "PrincipalController@faleConosco");
@@ -28,6 +27,15 @@ Route::post('/certificados/buscar', "CertificadosController@buscarComCPF");
 
 Route::get('/certificados/validar', "CertificadosController@validar");
 Route::post('/certificados/validar', "CertificadosController@validarComCodigo");
+
+//MEMBROS
+Route::get('/membros', "PrincipalController@membros");
+Route::get('/membros/editar', "MembrosController@editar");
+
+Route::get('/membros/criar', "MembrosController@criar");
+Route::post('/membros/criar', "MembrosController@criarMembro");
+
+Route::get('/membros/excluir', "MembrosController@excluir");
 
 
 
