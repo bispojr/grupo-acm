@@ -32,10 +32,16 @@ class MembrosController extends Controller
         $nome = $request->input('nome');
         $cpf = $request->input('cpf');
         $descricao = $request->input('descricao');
+        $fotourl = $request->input('fotourl');
 
         $membro = new Membros;
         $membro->nome = $nome;
+        $membro->email = $email;
+        $membro->cpf = $cpf;
+        $membro->descricao = $descricao;
+        $membro->foto_url = $foto_url;
         $membro->save();
+
 
         echo 'Membro criado com sucesso!';
     }

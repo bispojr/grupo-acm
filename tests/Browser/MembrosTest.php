@@ -18,7 +18,11 @@ class MembrosTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/membros/criar')
-                    ->type('enderecoEmail','teste@teste.com')
+                    ->type('email','teste@teste.com')
+                    ->type('nome', 'Rafael Andrade')
+                    ->type('cpf', '33333333333')
+                    ->type('descricao', 'ola mundo')
+                    ->type('foto_url', 'foto')
                     ->press('Criar')
                     ->screenshot('telamembros')
                     ->assertSee('Membro criado com sucesso!');
