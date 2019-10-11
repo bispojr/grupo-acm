@@ -8,6 +8,16 @@ use App\Membros as Membros;
 class MembrosController extends Controller
 {
 
+
+    public function todos()
+    {
+        //return 'User '.$id;
+        $dados = Membros::valores("todos");
+        return view('esqueleto', $dados );
+
+        
+    }
+
     public function editar()
     {
         $dados = Membros::valores("editar");
@@ -32,7 +42,7 @@ class MembrosController extends Controller
         $nome = $request->input('nome');
         $cpf = $request->input('cpf');
         $descricao = $request->input('descricao');
-        $fotourl = $request->input('fotourl');
+        $foto_url = $request->input('foto_url');
 
         $membro = new Membros;
         $membro->nome = $nome;
@@ -40,9 +50,13 @@ class MembrosController extends Controller
         $membro->cpf = $cpf;
         $membro->descricao = $descricao;
         $membro->foto_url = $foto_url;
-        $membro->save();
+        $res = $membro->save();
 
+        var_dump($res);
 
         echo 'Membro criado com sucesso!';
     }
+
+
+
 }

@@ -29,13 +29,26 @@ Route::get('/certificados/validar', "CertificadosController@validar");
 Route::post('/certificados/validar', "CertificadosController@validarComCodigo");
 
 //MEMBROS
-Route::get('/membros', "PrincipalController@membros");
-Route::get('/membros/editar', "MembrosController@editar");
 
-Route::get('/membros/criar', "MembrosController@criar");
-Route::post('/membros/criar', "MembrosController@criarMembro");
+Route::group(['prefix' => 'membros'], function(){
 
-Route::get('/membros/excluir', "MembrosController@excluir");
+	Route::get('/', "PrincipalController@membros");
+	Route::get('/editar', "MembrosController@editar");
+
+	Route::get('/criar', "MembrosController@criar");
+	Route::post('/criar', "MembrosController@criarMembro");
+
+	Route::get('/excluir/{idExc}', "MembrosController@excluir", function($idExc){
+		return "Membros excluir com id {$idExc}	";
+	});
+
+	Route::get('/todos', "MembrosController@todos");
+
+});
+
+
+
+
 
 
 
