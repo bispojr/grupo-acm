@@ -14,13 +14,14 @@ class MembrosController extends Controller
         //return 'User '.$id;
         $dados = Membros::valores("todos");
         return view('esqueleto', $dados );
-
-        
     }
 
-    public function editar()
+
+    public function editar($id)
     {
         $dados = Membros::valores("editar");
+        $dados["membro"] = Membros::find($id);
+
         return view('esqueleto', $dados);
     }
 
@@ -30,9 +31,19 @@ class MembrosController extends Controller
         return view('esqueleto', $dados);
     }
 
-    public function excluir()
+    public function excluir($id)
     {
         $dados = Membros::valores("excluir");
+        $dados["membro"] = Membros::find($id); 
+                   
+        return view('esqueleto', $dados);
+    }
+
+    public function exibir($id)
+    {
+        $dados = Membros::valores("exibir");
+        $dados["membro"] = Membros::find($id); 
+                   
         return view('esqueleto', $dados);
     }
 
@@ -55,6 +66,30 @@ class MembrosController extends Controller
         var_dump($res);
 
         echo 'Membro criado com sucesso!';
+    }
+
+    public function editarMembro(Request $request, $id)
+    {
+        $dados["membro"] = $request->all();
+        $dados["membro"] = Membros::where('id', $id)->first();
+
+        #$update = $dados->update($dados);
+
+        if( $dados != null ){
+
+            $dados["membro"]->update();
+
+            return redirect()->route('membros.todos')->with(['message'=> 'Successfully update!!']);
+
+        }
+        else
+            return 'falho na atualização';
+        
+    }
+
+    public function excluirMembro(Request $request)
+    {
+
     }
 
 

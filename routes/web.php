@@ -33,16 +33,22 @@ Route::post('/certificados/validar', "CertificadosController@validarComCodigo");
 Route::group(['prefix' => 'membros'], function(){
 
 	Route::get('/', "PrincipalController@membros");
-	Route::get('/editar', "MembrosController@editar");
+
+	Route::get('/editar/{idEdit}', "MembrosController@editar");
+	Route::post('/editar/{idEdit2}', "MembrosController@editarMembro");
+
+
 
 	Route::get('/criar', "MembrosController@criar");
 	Route::post('/criar', "MembrosController@criarMembro");
 
-	Route::get('/excluir/{idExc}', "MembrosController@excluir", function($idExc){
-		return "Membros excluir com id {$idExc}	";
-	});
+	Route::get('/excluir/{idExc}', "MembrosController@excluir");
 
 	Route::get('/todos', "MembrosController@todos");
+
+	Route::get('/exibir/{idExib}', "MembrosController@exibir", function($idExib){
+		return "Membros exibir com id {$idExib}";
+	});
 
 });
 

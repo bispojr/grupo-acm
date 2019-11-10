@@ -9,17 +9,24 @@ class Membros extends Model
 
     protected $table = 'membros';
 
-    public static function valores($pagina)
+    public static function valores($pagina, $id=null)
     {
         switch($pagina){
             case "todos":
                 return self::valoresTodos();
+                break;
             case "editar":
-                return self::valoresEditar();
+                return self::valoresEditar($id);
+                break;
             case "criar":
                 return self::valoresCriar();
+                break;
+            case "exibir":
+                return self::valoresExibir($id);
+                break;
             case "excluir":
-                return self::valoresExcluir();             
+                return self::valoresExcluir($id);
+                break;           
         }
     }
 
@@ -32,10 +39,22 @@ class Membros extends Model
         return $dados;
     }
 
-    private static function valoresEditar()
+    private static function valoresExibir($id)
+    {
+        $dados["titulo"] = 'Membros';
+        $dados["view"] = 'membros.exibir';
+
+        $dados["membros"] = Membros::where('id', $id)->get();
+
+        return $dados;
+    }
+
+    private static function valoresEditar($id)
     {
         $dados["titulo"] = 'Editar membros';
         $dados["view"] = 'membros.editar';
+
+        $dados["membros"] = Membros::where('id', $id)->get();
 
         return $dados;
     }
@@ -48,10 +67,12 @@ class Membros extends Model
         return $dados;
     }
 
-    private static function valoresExcluir()
+    private static function valoresExcluir($id)
     {
         $dados["titulo"] = 'Excluir membros';
         $dados["view"] = 'membros.excluir';
+
+        $dados["membros"] = Membros::where('id', $id)->get();
 
         return $dados;
     }

@@ -25,10 +25,11 @@
             <textarea name="descricao" class="form-control" id="descricaoMembro" rows="3"></textarea>
           </div>
 
+          
+
           <div class="form-group">
-                <label for="exampleFormControlInput1">Foto URL:</label>
-                <label for="nome" class="sr-only">foto</label>
-                <input name="foto_url" type="text" class="form-control" id="nome" placeholder="Digite o seu nome.">
+            <label for="exampleFormControlFile1">Foto</label>
+            <input type="file" name="foto_url" class="form-control-file" id="exampleFormControlFile1">
           </div>
 
           <button type="submit" class="btn btn-primary mb-2">Criar</button>

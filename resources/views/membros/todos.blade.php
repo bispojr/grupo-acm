@@ -30,13 +30,9 @@
             @endforeach
           </tbody>
 
-          <button type="submit" class="btn btn-primary mb-2">Adicionar <i class="material-icons">group_add</i> </button>
 
+          <a class="btn btn-primary" href='{{ url('/membros/criar') }}' role="button"> Adicionar <i class="material-icons">group_add</i> </a>
         </table>
-
-
-
-
 
     </div>  
     <div class="col-md-1"></div>

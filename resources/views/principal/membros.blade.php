@@ -184,6 +184,36 @@
             </div>
           </div>
         </div>
+
+        <div class="card border-dark mb-3" style="margin-top:2em;">
+          <div class="card-body text-dark">
+            <div class="row">
+              <div class="col-md-3">
+                  <img class="card-img-top" src="/img/quem-somos/lucasrodrigues.jpg" alt="lucasrodrigues-membro">  
+                </div>              
+                <div class="col-md-9">
+                    <h5 class="card-title">Lucas Rodrigues Costa</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Membro</h6> 
+                    <p class="card-text"> Graduando em Ciência da Computação na Universidade Federal de Goiás. Com interesse em pesquisas nas áreas de Inteligência Artifial, Matemática Computacional, Neurociência Computacional e Educação de Computação. </p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-dark mb-3" style="margin-top:2em;">
+          <div class="card-body text-dark">
+            <div class="row">
+              <div class="col-md-3">
+                  <img class="card-img-top" src="/img/quem-somos/renatoabreu.jpg" alt="renatoabreu-membro">  
+                </div>              
+                <div class="col-md-9">
+                    <h5 class="card-title">Renato Oliveira Abreu</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Membro</h6> 
+                    <p class="card-text"> Mestre em Educação para Ciências e Matemática - IFG/Câmpus Jataí. Possui Especialização em Segurança de Redes em Ambientes Corporativos pelo Serviço Nacional de Aprendizagem de Goiás (SENAC-GOIÁS), graduado em Tecnologia em Sistemas de Informação pelo Centro Federal de Educação Tecnológica de Goiás (UnED-Jataí) (2008). Atualmente é professor no Instituto Federal de Educação, Ciência e Tecnologia de Goiás, membro do Núcleo de pesquisa em Informática na Educação do IFG, membro do Núcleo Docente Estruturante do curso (TADS) e membro suplente do Conselho Departamental do IFG - Campus Jataí. </p>
+                </div>
+            </div>
+          </div>
+        </div>
         
         <div class="card border-dark mb-3" style="margin-top:2em;">
           <div class="card-body text-dark">

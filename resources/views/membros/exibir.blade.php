@@ -2,9 +2,10 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <h1>Excluir membros</h1>
+        <h1>Exibir membros</h1>
 
-        <form action="">
+
+        <form>
           <div class="form-group">
                 <label for="exampleFormControlInput1">Nome</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $membro->nome }}" readonly>
@@ -28,12 +29,10 @@
             <label for="exampleFormControlInput1">Foto</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $membro->foto }}" readonly>
           </div>
-
-          <button type="submit" class="btn btn-primary mb-2">Excluir</button>
-          <a class="btn btn-primary" href='{{ url('/membros/todos') }}' role="button"> Voltar </a>
-
         </form>
 
+
+        <a class="btn btn-primary" href='{{ url('/membros/todos') }}' role="button"> Voltar </a>
 
     </div>  
     <div class="col-md-1"></div>
